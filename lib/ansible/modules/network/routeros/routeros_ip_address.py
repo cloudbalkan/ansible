@@ -13,7 +13,7 @@ ANSIBLE_METADATA = {'metadata_version': '1.1',
 
 DOCUMENTATION = """
 ---
-module: routeros_address_list
+module: routeros_ip_address
 version_added: "2.9"
 author: "Stoil Stoiov (@stoilstoilov)"
 short_description: Manage IP addresses on Mikrotik RouterOS 
@@ -43,19 +43,19 @@ tasks:
       interface: ether1
   
   - name: Enable an IP address entry
-    routeros_ip_address_list:
+    routeros_ip_address:
       address: 192.168.88.77  
       interface: ether1
       state: enabled
   
   - name: Disable an IP address entry
-    routeros_ip_address_list:
+    routeros_ip_address:
       address: 192.168.88.77  
       interface: ether1
       state: disabled
 
   - name: Remove an IP address entry
-    routeros_ip_address_list:
+    routeros_ip_address:
       address: 192.168.88.77  
       interface: ether1
       state: absent
